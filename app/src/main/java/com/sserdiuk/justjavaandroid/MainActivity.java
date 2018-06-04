@@ -1,7 +1,7 @@
 package com.sserdiuk.justjavaandroid;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void submitOrder(View view) {
-        display(2*2);
+        display(2 * 2);
         displayPrice(2 * 5);
     }
 
@@ -28,11 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void displayPrice(int number) {
         TextView priceTextView = findViewById(R.id.price_text_view);
-//        String text = getString(R.string.local_currency) +
-//                NumberFormat.getCurrencyInstance().format(number);
-
         String text = NumberFormat.getCurrencyInstance().format(number);
-
         priceTextView.setText(text);
     }
 }
