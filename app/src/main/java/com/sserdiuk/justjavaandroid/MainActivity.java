@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import java.text.NumberFormat;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -15,10 +17,22 @@ public class MainActivity extends AppCompatActivity {
 
     public void submitOrder(View view) {
         display(2*2);
+        displayPrice(2 * 5);
     }
 
     private void display(int number) {
         TextView count = findViewById(R.id.count);
-        count.setText("" + number);
+        String text = "" + number;
+        count.setText(text);
+    }
+
+    private void displayPrice(int number) {
+        TextView priceTextView = findViewById(R.id.price_text_view);
+//        String text = getString(R.string.local_currency) +
+//                NumberFormat.getCurrencyInstance().format(number);
+
+        String text = NumberFormat.getCurrencyInstance().format(number);
+
+        priceTextView.setText(text);
     }
 }

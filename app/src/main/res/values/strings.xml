@@ -3,4 +3,6 @@
     <string name="quantity">quantity</string>
     <string name="count">count</string>
     <string name="order">order</string>
+    <string name="price">price</string>
+    <string name="local_currency">$</string>
 </resources>
