@@ -10,6 +10,7 @@ import java.text.NumberFormat;
 public class MainActivity extends AppCompatActivity {
 
     int numberOfCoffee = 0;
+    int price = 5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,8 +19,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void submitOrder(View view) {
-        display(numberOfCoffee * 2);
-        displayPrice(numberOfCoffee * 5);
+        display(numberOfCoffee);
+        displayPrice(numberOfCoffee * price);
     }
 
     private void display(int number) {
@@ -32,5 +33,22 @@ public class MainActivity extends AppCompatActivity {
         TextView priceTextView = findViewById(R.id.price_text_view);
         String text = NumberFormat.getCurrencyInstance().format(number);
         priceTextView.setText(text);
+    }
+
+    private void updateUI() {
+        display(numberOfCoffee);
+        displayPrice(numberOfCoffee * price);
+    }
+
+    public void decreaseQuantity(View view) {
+        if (0 < numberOfCoffee) {
+            numberOfCoffee--;
+        }
+        updateUI();
+    }
+
+    public void increaseQuantity(View view) {
+        numberOfCoffee++;
+        updateUI();
     }
 }

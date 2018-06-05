@@ -15,6 +15,14 @@
         android:text="@string/quantity"
         android:textAllCaps="true" />
 
+    <Button
+        android:id="@+id/button_minus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:onClick="decreaseQuantity"
+        android:text="@string/minus" />
+
     <TextView
         android:id="@+id/count"
         android:layout_width="wrap_content"
@@ -23,6 +31,14 @@
         android:text="@string/count"
         android:textColor="@android:color/black"
         android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/button_plus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:onClick="increaseQuantity"
+        android:text="@string/plus" />
 
     <TextView
         android:id="@+id/price_view"
