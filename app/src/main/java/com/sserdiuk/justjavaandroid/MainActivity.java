@@ -32,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
     private void displayPrice(int number) {
         TextView priceTextView = findViewById(R.id.price_text_view);
         String text = NumberFormat.getCurrencyInstance().format(number);
+        if (number > 0) {
+            text += "\n" + "Thank You!";
+        }
         priceTextView.setText(text);
     }
 
